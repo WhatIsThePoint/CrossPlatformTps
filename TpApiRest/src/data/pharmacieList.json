@@ -1,0 +1,17 @@
+[
+    {
+        "id": "ph001",
+        "nom": "Pharmacie Centrale",
+        "adresse": "12 Rue de la République"
+    },
+    {
+        "id": "ph002",
+        "nom": "Pharmacie du Port",
+        "adresse": "5 Quai des Pêcheurs"
+    },
+    {
+        "id": "ph003",
+        "nom": "Grande Pharmacie",
+        "adresse": "30 Avenue Jean Jaurès"
+    }
+]

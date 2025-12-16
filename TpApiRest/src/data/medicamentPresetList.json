@@ -1,0 +1,30 @@
+[
+    {
+        "id": "m001",
+        "nom": "Doliprane",
+        "dosage": "500 mg",
+        "forme": "Comprimé",
+        "quantiteStock": 120
+    },
+    {
+        "id": "m002",
+        "nom": "Advil",
+        "dosage": "400 mg",
+        "forme": "Comprimé",
+        "quantiteStock": 50
+    },
+    {
+        "id": "m003",
+        "nom": "Spasfon",
+        "dosage": "80 mg",
+        "forme": "Comprimé",
+        "quantiteStock": 80
+    },
+    {
+        "id": "m004",
+        "nom": "Amoxicilline",
+        "dosage": "1 g",
+        "forme": "Comprimé",
+        "quantiteStock": 30
+    }
+]

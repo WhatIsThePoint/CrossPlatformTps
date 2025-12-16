@@ -1,0 +1,145 @@
+import React from 'react';
+import { View, Text, Button, StyleSheet, ScrollView } from 'react-native';
+
+export default function ProfileScreen({ route, navigation }) {
+    const username = route.params?.username || 'Utilisateur';
+
+    return (
+        <ScrollView style={styles.container}>
+            <View style={styles.content}>
+                <Text style={styles.title}>👤 Profil</Text>
+
+                <View style={styles.userCard}>
+                    <Text style={styles.userLabel}>Connecté en tant que :</Text>
+                    <Text style={styles.username}>{username}</Text>
+                </View>
+
+                <View style={styles.section}>
+                    <Text style={styles.sectionTitle}>Informations du profil</Text>
+                    <View style={styles.infoRow}>
+                        <Text style={styles.infoLabel}>Nom d'utilisateur :</Text>
+                        <Text style={styles.infoValue}>{username}</Text>
+                    </View>
+                    <View style={styles.infoRow}>
+                        <Text style={styles.infoLabel}>Statut :</Text>
+                        <Text style={styles.infoValue}>✅ Actif</Text>
+                    </View>
+                    <View style={styles.infoRow}>
+                        <Text style={styles.infoLabel}>Type de compte :</Text>
+                        <Text style={styles.infoValue}>Utilisateur standard</Text>
+                    </View>
+                </View>
+
+                <View style={styles.section}>
+                    <Text style={styles.sectionTitle}>Actions</Text>
+                    <View style={styles.buttonSpacing}>
+                        <Button
+                            title="🏠 Retour à l'accueil"
+                            onPress={() => navigation.navigate('Home', { username })}
+                            color="#4CAF50"
+                        />
+                    </View>
+                    <View style={styles.buttonSpacing}>
+                        <Button
+                            title="⚙️ Paramètres"
+                            onPress={() => navigation.navigate('Settings', { username })}
+                            color="#FF9800"
+                        />
+                    </View>
+                </View>
+
+                <View style={styles.infoBox}>
+                    <Text style={styles.infoText}>
+                        📝 Cette page affiche les informations de votre profil. Votre nom
+                        d'utilisateur est transmis à travers toutes les pages de l'application.
+                    </Text>
+                </View>
+            </View>
+        </ScrollView>
+    );
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#f5f5f5',
+    },
+    content: {
+        padding: 20,
+    },
+    title: {
+        fontSize: 28,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        color: '#333',
+    },
+    userCard: {
+        backgroundColor: '#2196F3',
+        padding: 20,
+        borderRadius: 10,
+        marginBottom: 30,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3,
+    },
+    userLabel: {
+        fontSize: 14,
+        color: 'rgba(255, 255, 255, 0.9)',
+        marginBottom: 5,
+    },
+    username: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: 'white',
+    },
+    section: {
+        backgroundColor: 'white',
+        padding: 20,
+        borderRadius: 10,
+        marginBottom: 20,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3,
+    },
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: '600',
+        marginBottom: 15,
+        color: '#333',
+    },
+    infoRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingVertical: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#f0f0f0',
+    },
+    infoLabel: {
+        fontSize: 15,
+        color: '#666',
+    },
+    infoValue: {
+        fontSize: 15,
+        fontWeight: '600',
+        color: '#333',
+    },
+    buttonSpacing: {
+        marginBottom: 10,
+    },
+    infoBox: {
+        backgroundColor: '#e3f2fd',
+        padding: 15,
+        borderRadius: 8,
+        borderLeftWidth: 4,
+        borderLeftColor: '#2196F3',
+    },
+    infoText: {
+        fontSize: 14,
+        color: '#555',
+        lineHeight: 20,
+    },
+});
